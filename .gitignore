@@ -1,0 +1,7 @@
+# sftp config
+.vscode
+
+*dbhandler.inc*
+!*dbhandler.inc.example*
+*config.php*
+!*config.php.example*
