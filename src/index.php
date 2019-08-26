@@ -16,7 +16,7 @@
     <?php
       require_once 'templates/navigation.php';
 
-      if (isset($_SESSION['username'])) {
+      if ($user->isLoggedIn()) {
         ?>
           <p>Logged in as <strong><?php echo $user->getUsername(); ?></strong></p>
 

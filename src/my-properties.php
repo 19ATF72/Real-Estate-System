@@ -16,7 +16,7 @@
     <?php
       require_once 'templates/navigation.php';
       
-      if (isset($_SESSION['username'])) {
+      if ($user->isLoggedIn()) {
         ?>
         <a href="index.php"><button name="home">Home</button></a>
         <?php
@@ -26,6 +26,7 @@
         }
 
         foreach($userProperties as $k => $values) {
+          $propertyid = $values['id'];
           ?>
             <p>Space: <?php echo $values['floorSpace']; ?></p>
             <p>Bedrooms: <?php echo $values['numBedrooms']; ?></p>
@@ -33,6 +34,7 @@
             <p>Parking: <?php echo $values['parking']; ?></p>
             <p>Description: <?php echo $values['description']; ?></p>
             <p>Price: <?php echo $values['price']; ?></p>
+            <a href="user-property.php?prop=<?php echo $propertyid; ?>"><button name="myprops">View</button></a>
             <br>
           <?php
         }
