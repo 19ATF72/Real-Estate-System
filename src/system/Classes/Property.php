@@ -1,17 +1,19 @@
 <?php
 
-/**
- * Profile - Carries out functions related to the users profile.
- */
-
-// Take over profile functions from db
-// Extend User
-
 namespace RealEstate\Classes;
 use PDO;
 
+/**
+ * Profile - Carries out functions related to the users profile.
+ */
 class Property {
 
+  /**
+   * Create a new property
+   *
+   * @param post $data
+   * @return void
+   */
   public function createNewProperty($data) {
     global $user, $db;
     $userID = $user->getId();
@@ -62,6 +64,26 @@ class Property {
     }
   }
 
+  public function getSingleProperty($propertyId) {
+    global $db;
+
+    $sql = 'SELECT * FROM properties WHERE id = ?';
+
+    $stmt = $db->get()->prepare($sql);
+
+    if ($stmt) {
+      $stmt->execute([$propertyId]);
+      return $stmt->fetch(PDO::FETCH_ASSOC);
+    }
+    else {
+      return NULL;
+    }
+  }
+  /**
+   * Get the property types available.
+   *
+   * @return void
+   */
   public function getPropertyTypes() {
 
     global $db;
@@ -73,6 +95,28 @@ class Property {
     if ($stmt) {
       $stmt->execute();
       return $stmt->fetchAll(PDO::FETCH_ASSOC);
+    }
+    else {
+      return NULL;
+    }
+  }
+  
+  /**
+   * Get the user ID from the property ID.
+   *
+   * @param int $propertyId
+   * @return void
+   */
+  public function getUserFromProperty($propertyId) {
+    global $db;
+
+    $sql = 'SELECT userId FROM `properties` WHERE id = ?';
+
+    $stmt = $db->get()->prepare($sql);
+
+    if ($stmt) {
+      $stmt->execute([$propertyId]);
+      return $stmt->fetch(PDO::FETCH_ASSOC);
     }
     else {
       return NULL;
