@@ -22,10 +22,9 @@
 
         // Check logged in user is the owner of the property
         if($user->getId() == $userIsOwner['userId']) {
-
+          
+          // Get a property based on the property ID in the URL
           $singleProperty = $property->getSingleProperty($_GET['prop']);
-          // echo '<pre>' . var_export($singleProperty, true) . '</pre>';
-          // exit();
           ?>
           <a href="my-properties.php"><button name="myprops">My Properties</button></a>
           <br>
@@ -38,14 +37,14 @@
           <p>Price: <?php echo $singleProperty['price']; ?></p>
           <br>
           <?php
-
-          echo "Success";
         }
         else {
+          // TODO: error message for logged in user who is not owner
           echo "This is not your property.";
         }
       }
       else {
+        // TODO: error message for a non logged in user.
         echo "You are not logged in.";
       }
 

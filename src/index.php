@@ -29,11 +29,31 @@
           <?php require_once 'templates/logout.php';
       }
       else {
-        require_once 'templates/signup.php';
-        require_once 'templates/login.php';
+        ?>
+        <header class="masthead">
+          <div class="container h-100">
+            <div class="row h-100 align-items-center">
+              <div class="col-12 text-center">
+                <div class="px-4 d-flex justify-content-center">
+                  <form class="form-inline w-75 justify-content-center" action="/action_page.php">
+                  <div class="input-group">
+                  <span class="input-group-text" id="basic-addon1"><button class="btn btn-outline-light w-25" type="submit">Search</button></span>
+                    <input class="form-control w-75 re-radius" type="text" placeholder="Search">
+                    
+      </div>
+                  </form>
+                </div>
+              </div>
+            </div>
+          </div>
+        </header>
+
+        <?php
+        // require_once 'templates/signup.php';
+        // require_once 'templates/login.php';
       }
     ?>
 
-    <?php require_once('templates/footer.php'); ?>
+    <?php require_once 'templates/footer.php'; ?>
   </body>
 </html>
