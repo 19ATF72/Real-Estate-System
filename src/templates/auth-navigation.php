@@ -17,16 +17,22 @@ if (isset($_POST)) {
     <ul class="navbar-nav mr-auto">
     </ul>
     <ul class="navbar-nav navbar-right mr-2">
-      <li class="nav-item  my-auto">
+      <li class="nav-item active my-auto mx-3">
         <a class="nav-link text-light" href="#">Home</a>
       </li>
-      <li class="nav-item my-auto">
-        <a class="nav-link text-light" href="#">Link 1</a>
+      <li class="nav-item my-auto mx-3">
+        <a class="nav-link text-light" href="#">Buy</a>
       </li>
-      <li class="nav-item my-auto">
-        <a class="nav-link text-light" href="#">Link 2</a>
+      <li class="nav-item my-auto mx-3">
+        <a class="nav-link text-light" href="#">Rent</a>
       </li>
-      <li class="nav-item my-auto">
+      <li class="nav-item my-auto mx-3">
+        <a class="nav-link text-light" href="#">Commercial</a>
+      </li>
+      <li class="nav-item my-auto mr-4">
+        <div class="vertical-divider"><div>
+      </li>
+      <li class="nav-item my-auto mr-2">
         <a class="nav-link" href="#">
           <form action="" method="post">
             <input type="hidden" name="logout-post" value="1" />
