@@ -22,6 +22,20 @@ if (isset($_POST)) {
       echo 'yay!';
     }
   }
+
+  if ($_POST['signup-post'] == 1) {
+    // Assign and call signup user
+    $result = $site->signupUser($_POST);
+
+    // Return error messages
+    if ($result['status'] != 200) {
+      echo $result['message'];
+    }
+    else {
+      // TODO: change error message
+      echo 'yay!';
+    }
+  }
 }
 ?>
 
@@ -50,26 +64,25 @@ if (isset($_POST)) {
       <li class="nav-item my-auto mr-4">
         <div class="vertical-divider"><div>
       </li>
-      <li class="nav-item my-auto">
+      <li class="nav-item my-auto mr-2">
         <!-- <a class="nav-link" href="/login.php"> -->
-          <button class="btn btn-outline-light" type="submit" data-toggle="modal" data-target="#exampleModal">Log In</button>
+          <button class="btn btn-outline-light" type="submit" data-toggle="modal" data-target="#loginModal">Log In</button>
         <!-- </a> -->
       </li>
-      <li class="nav-item my-auto">
-        <a class="nav-link" href="/signup.php">
-          <button class="btn btn-outline-light" type="submit">Sign Up</button>
-        </a>
+      <li class="nav-item my-auto mx-2">
+      <button class="btn btn-outline-light" type="submit" data-toggle="modal" data-target="#signupModal">Sign Up</button>
+
       </li>
     </ul>
     </div>
   </nav>
 
 <!-- Modal -->
-<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+<div class="modal fade" id="loginModal" tabindex="-1" role="dialog" aria-labelledby="loginModalLabel" aria-hidden="true">
   <div class="modal-dialog" role="document">
     <div class="modal-content">
       <div class="modal-header">
-        <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+        <h5 class="modal-title" id="loginModalLabel">Log In</h5>
         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
           <span aria-hidden="true">&times;</span>
         </button>
@@ -78,16 +91,57 @@ if (isset($_POST)) {
         <form action="" method="post">
           <input type="hidden" name="login-post" value="1" />
           <div class="form-group">
-            <label for="exampleInputEmail1">Email address</label>
-            <input type="text" class="form-control" name="emailusername" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Username / Email">
+            <label for="loginInputEmail1">Email address</label>
+            <input type="text" class="form-control" name="emailusername" id="loginInputEmail1" aria-describedby="emailHelp" placeholder="Username / Email">
             <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
           </div>
           <div class="form-group">
-            <label for="exampleInputPassword1">Password</label>
-            <input type="password" class="form-control" id="exampleInputPassword1" name="passwd" placeholder="Password">
+            <label for="loginInputPassword1">Password</label>
+            <input type="password" class="form-control" id="loginInputPassword1" name="passwd" placeholder="Password">
           </div>
           <div class="modal-footer">
             <button type="submit" class="btn btn-primary" name="login">Login</button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<!-- Modal -->
+<div class="modal fade" id="signupModal" tabindex="-1" role="dialog" aria-labelledby="signupModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="signupModalLabel">Sign Up</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <form action="" method="post">
+          <input type="hidden" name="signup-post" value="1" />
+          <div class="form-group">
+            <label for="signupInputusername1">Username</label>
+            <input type="text" class="form-control" name="username" id="signupInputusername1" aria-describedby="usernameHelp" placeholder="Username">
+            <small id="usernameHelp" class="form-text text-muted">Please enter a unique username</small>
+          </div>
+          <div class="form-group">
+            <label for="signupInputEmail1">Email address</label>
+            <input type="text" class="form-control" name="email" id="signupInputEmail1" aria-describedby="emailHelp" placeholder="Username / Email">
+            <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
+          </div>
+          <div class="form-group">
+            <label for="signupInputPassword1">Password</label>
+            <input type="password" class="form-control" id="signupInputPassword1" name="passwd" placeholder="Password">
+          </div>
+          <div class="form-group">
+            <label for="signupInputPassword1">Password</label>
+            <input type="password" class="form-control" id="signupInputPassword1" name="passwdtwo" placeholder="Reapeat Password">
+          </div>
+          <div class="modal-footer">
+            <button type="submit" class="btn btn-primary" name="signup">Sign Up</button>
           </div>
         </form>
       </div>

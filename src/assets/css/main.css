@@ -1,3 +1,12 @@
+body {
+  font-family: 'Montserrat', sans-serif;
+}
+
+.logo-font{
+  font-family: 'Righteous', cursive;
+  font-size: 35px;
+}
+
 .masthead {
   height: 80vh;
   min-height: 400px;
@@ -8,10 +17,10 @@
 }
 
 .re-radius {
-  border-radius: 25px;
-}
-.vertical-devider {
-  height: 100%;
+  -webkit-border-radius: 25px;
+	-moz-border-radius: 25px;
+	border-radius: 25px;
+
 }
 .avatar {
   width: 40px;
@@ -20,4 +29,19 @@
 
 .dropdown-toggle::after {
   display:none;
+}
+
+.vertical-divider {
+  height: 45px;
+  width: 1px;
+  background-color:rgb(255,255,255,0.25);
+}
+
+input {
+	outline: none;
+}
+
+input[type=search] {
+	background: #ededed url(https://static.tumblr.com/ftv85bp/MIXmud4tx/search-icon.png) no-repeat 9px center;
+  padding: 9px 0px 9px 35px;
 }
