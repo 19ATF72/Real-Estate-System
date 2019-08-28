@@ -8,20 +8,20 @@ body {
 }
 
 .masthead {
-  height: 80vh;
+  height: 100vh;
   min-height: 400px;
-  background-image: url('https://www.walkom.com.au/wp-content/uploads/2018/03/4-2-e1521768377667.jpg');
+  background-image: url('../images/header.jpg');
   background-size: cover;
   background-position: top right;
   background-repeat: no-repeat;
 }
 
 .re-radius {
-  -webkit-border-radius: 25px;
-	-moz-border-radius: 25px;
-	border-radius: 25px;
-
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  border-radius: 5px;
 }
+
 .avatar {
   width: 40px;
   height: 40px;
@@ -37,11 +37,37 @@ body {
   background-color:rgb(255,255,255,0.25);
 }
 
-input {
-	outline: none;
+
+/* Custom bootstrap button */
+
+.btn-primary,
+.btn-primary:hover,
+.btn-primary:active,
+.btn-primary:visited,
+.btn-primary:focus {
+  background-color: #660b75;
+  border-color: #660b75;
 }
 
-input[type=search] {
-	background: #ededed url(https://static.tumblr.com/ftv85bp/MIXmud4tx/search-icon.png) no-repeat 9px center;
-  padding: 9px 0px 9px 35px;
+.emphasis-font {
+  color: #660b75;
+  font-weight:bold;
+}
+
+li.active{
+  border-bottom: 2px solid #660b75 !important;
+  margin-bottom: px !important;
+}
+
+.custom-toggler.navbar-toggler {
+  border-color: rgb(255,255,255);
+}
+.custom-toggler .navbar-toggler-icon {
+background-image: url("data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 32 32' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='rgba(255,255,255)' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 8h24M4 16h24M4 24h24'/%3E%3C/svg%3E");
+}
+
+@media all and (max-width: 500px) { /* screen size until 500px */
+  h1 {
+    font-size: 2em; /* 0.8x default size */
+  }
 }
