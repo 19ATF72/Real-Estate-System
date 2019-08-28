@@ -18,8 +18,8 @@ body {
 
 .re-radius {
   -webkit-border-radius: 5px;
-	-moz-border-radius: 5px;
-	border-radius: 5px;
+  -moz-border-radius: 5px;
+  border-radius: 5px;
 }
 
 .avatar {
@@ -45,8 +45,8 @@ body {
 .btn-primary:active,
 .btn-primary:visited,
 .btn-primary:focus {
-    background-color: #660b75;
-    border-color: #660b75;
+  background-color: #660b75;
+  border-color: #660b75;
 }
 
 .emphasis-font {
@@ -59,3 +59,15 @@ li.active{
   margin-bottom: px !important;
 }
 
+.custom-toggler.navbar-toggler {
+  border-color: rgb(255,255,255);
+}
+.custom-toggler .navbar-toggler-icon {
+background-image: url("data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 32 32' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='rgba(255,255,255)' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 8h24M4 16h24M4 24h24'/%3E%3C/svg%3E");
+}
+
+@media all and (max-width: 500px) { /* screen size until 500px */
+  h1 {
+    font-size: 2em; /* 0.8x default size */
+  }
+}
