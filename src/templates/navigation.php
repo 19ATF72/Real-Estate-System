@@ -40,7 +40,7 @@ if (isset($_POST)) {
 ?>
 
 <nav class="navbar navbar-expand-lg navbar-light fixed-top">
-  <a class="navbar-brand text-light ml-2 logo-font" href="#">MOVE</a>
+  <a class="navbar-brand text-white ml-2 logo-font" href="#">MOVE</a>
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
   </button>
@@ -49,7 +49,7 @@ if (isset($_POST)) {
     <ul class="navbar-nav mr-auto">
     </ul>
     <ul class="navbar-nav navbar-right mr-2">
-      <li class="nav-item  my-auto mx-3">
+      <li class="nav-item active my-auto mx-3">
         <a class="nav-link text-light" href="#">Home</a>
       </li>
       <li class="nav-item my-auto mx-3">
@@ -79,7 +79,7 @@ if (isset($_POST)) {
 
 <!-- Modal -->
 <div class="modal fade" id="loginModal" tabindex="-1" role="dialog" aria-labelledby="loginModalLabel" aria-hidden="true">
-  <div class="modal-dialog" role="document">
+  <div class="modal-dialog modal-dialog-centered" role="document">
     <div class="modal-content">
       <div class="modal-header">
         <h5 class="modal-title" id="loginModalLabel">Log In</h5>
@@ -111,7 +111,7 @@ if (isset($_POST)) {
 
 <!-- Modal -->
 <div class="modal fade" id="signupModal" tabindex="-1" role="dialog" aria-labelledby="signupModalLabel" aria-hidden="true">
-  <div class="modal-dialog" role="document">
+  <div class="modal-dialog modal-dialog-centered" role="document">
     <div class="modal-content">
       <div class="modal-header">
         <h5 class="modal-title" id="signupModalLabel">Sign Up</h5>
