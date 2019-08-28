@@ -1,3 +1,12 @@
+<?php
+if (isset($_POST)) {
+  if ($_POST['logout-post'] == 1) {
+    // Logout user
+    $site->logoutUser();
+  }
+}
+?>
+
 <nav class="navbar navbar-expand-lg navbar-light fixed-top">
   <a class="navbar-brand text-light ml-2 logo-font" href="#">MOVE</a>
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -19,7 +28,10 @@
       </li>
       <li class="nav-item my-auto">
         <a class="nav-link" href="#">
-          <button class="btn btn-outline-light" type="submit">Log Out</button>
+          <form action="" method="post">
+            <input type="hidden" name="logout-post" value="1" />
+            <button class="btn btn-outline-light" type="submit" name="logout">Log Out</button>
+          </form>
         </a>
       </li>
       <li class="nav-item my-auto dropdown">
