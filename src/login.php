@@ -1,6 +1,6 @@
 <?php
 
-require_once __DIR__ . '/../system/core.php';
+require_once __DIR__ . '/system/core.php';
 
 /**
 * Login form for user.
