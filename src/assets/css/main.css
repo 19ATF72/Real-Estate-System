@@ -45,17 +45,17 @@ body {
 .btn-primary:active,
 .btn-primary:visited,
 .btn-primary:focus {
-  background-color: #660b75;
-  border-color: #660b75;
+  background-color: #512558;
+  border-color: #512558;
 }
 
 .emphasis-font {
-  color: #660b75;
+  color: #512558;
   font-weight:bold;
 }
 
 li.active{
-  border-bottom: 2px solid #660b75 !important;
+  border-bottom: 2px solid #512558 !important;
   margin-bottom: px !important;
 }
 
