@@ -4,6 +4,7 @@
    * @author Andrew De Torres <andrewdetorres999@gmail.com>
    */
   require_once __DIR__ . '/system/core.php';
+  $navIsLight = TRUE;
 ?>
 
 <!DOCTYPE html>
