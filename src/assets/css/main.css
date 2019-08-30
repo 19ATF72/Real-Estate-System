@@ -40,13 +40,14 @@ body {
 
 /* Custom bootstrap button */
 
-.btn-primary,
-.btn-primary:hover,
-.btn-primary:active,
-.btn-primary:visited,
-.btn-primary:focus {
+.btn-custom,
+.btn-custom:hover,
+.btn-custom:active,
+.btn-custom:visited,
+.btn-custom:focus {
   background-color: #512558;
   border-color: #512558;
+  color: white;
 }
 
 .emphasis-font {
@@ -70,4 +71,31 @@ background-image: url("data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 32 32
   h1 {
     font-size: 2em; /* 0.8x default size */
   }
+}
+
+
+
+/* TEST */
+
+.form-signin {
+  width: 100%;
+}
+
+.form-signin .btn {
+  font-size: 80%;
+  border-radius: 5rem;
+  letter-spacing: .1rem;
+  font-weight: bold;
+  padding: 1rem;
+  transition: all 0.2s;
+}
+
+.btn-google {
+  color: white;
+  background-color: #ea4335;
+}
+
+.btn-facebook {
+  color: white;
+  background-color: #3b5998;
 }

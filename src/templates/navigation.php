@@ -5,40 +5,8 @@ require_once __DIR__ . '/../system/core.php';
 /**
 * Login form for user.
 */
-
-if (isset($_POST)) {
-  if ($_POST['login-post'] == 1) {
-    // Assign and call login user
-    $result = $site->loginUser($_POST);
-
-    echo '<pre>' . var_export($result) . '</pre>';
-    exit();
-    // Return error messages
-    if ($result['status'] != 200) {
-      echo $result['message'];
-    }
-    else {
-      // TODO: Change error message
-      echo 'yay!';
-    }
-  }
-
-  if ($_POST['signup-post'] == 1) {
-    // Assign and call signup user
-    $result = $site->signupUser($_POST);
-
-    // Return error messages
-    if ($result['status'] != 200) {
-      echo $result['message'];
-    }
-    else {
-      // TODO: change error message
-      echo 'yay!';
-    }
-  }
-}
-
 ?>
+
 <nav class="navbar navbar-expand-lg fixed-top <?PHP echo ($navIsLight) ? 'navbar-light': 'navbar-dark'; ?>">
   <a class="navbar-brand ml-2 logo-font <?PHP echo ($navIsLight) ? 'text-white': 'text-dark'; ?>" href="/index.php">MOVE</a>
   <button class="navbar-toggler custom-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -64,84 +32,15 @@ if (isset($_POST)) {
         <div class="vertical-divider"><div>
       </li>
       <li class="nav-item my-auto mr-2">
-          <button class="btn <?PHP echo ($navIsLight) ? 'btn-outline-light': 'btn btn-outline-dark'; ?>" type="submit" data-toggle="modal" data-target="#loginModal">Log In</button>
+        <a href="login.php">
+          <button class="btn <?PHP echo ($navIsLight) ? 'btn-outline-light': 'btn btn-outline-dark'; ?>" type="submit">Log In</button>
+        </a>
       </li>
       <li class="nav-item my-auto mx-2">
-      <button class="btn <?PHP echo ($navIsLight) ? 'btn-outline-light': 'btn btn-outline-dark'; ?>" type="submit" data-toggle="modal" data-target="#signupModal">Sign Up</button>
-
+      <a href="signup.php">
+          <button class="btn <?PHP echo ($navIsLight) ? 'btn-outline-light': 'btn btn-outline-dark'; ?>" type="submit">Sign Up</button>
+        </a>
       </li>
     </ul>
     </div>
   </nav>
-
-<!-- Modal -->
-<div class="modal fade" id="loginModal" tabindex="-1" role="dialog" aria-labelledby="loginModalLabel" aria-hidden="true">
-  <div class="modal-dialog modal-dialog-centered" role="document">
-    <div class="modal-content">
-      <div class="modal-header">
-        <h5 class="modal-title" id="loginModalLabel">Log In</h5>
-        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-          <span aria-hidden="true">&times;</span>
-        </button>
-      </div>
-      <div class="modal-body">
-        <form action="" method="post">
-          <input type="hidden" name="login-post" value="1" />
-          <div class="form-group">
-            <label for="loginInputEmail1">Email address</label>
-            <input type="text" class="form-control" name="emailusername" id="loginInputEmail1" aria-describedby="emailHelp" placeholder="Username / Email">
-            <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
-          </div>
-          <div class="form-group">
-            <label for="loginInputPassword1">Password</label>
-            <input type="password" class="form-control" id="loginInputPassword1" name="passwd" placeholder="Password">
-          </div>
-          <div class="modal-footer">
-            <button type="submit" class="btn btn-primary" name="login">Login</button>
-          </div>
-        </form>
-      </div>
-    </div>
-  </div>
-</div>
-
-
-<!-- Modal -->
-<div class="modal fade" id="signupModal" tabindex="-1" role="dialog" aria-labelledby="signupModalLabel" aria-hidden="true">
-  <div class="modal-dialog modal-dialog-centered" role="document">
-    <div class="modal-content">
-      <div class="modal-header">
-        <h5 class="modal-title" id="signupModalLabel">Sign Up</h5>
-        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-          <span aria-hidden="true">&times;</span>
-        </button>
-      </div>
-      <div class="modal-body">
-        <form action="" method="post">
-          <input type="hidden" name="signup-post" value="1" />
-          <div class="form-group">
-            <label for="signupInputusername1">Username</label>
-            <input type="text" class="form-control" name="username" id="signupInputusername1" aria-describedby="usernameHelp" placeholder="Username">
-            <small id="usernameHelp" class="form-text text-muted">Please enter a unique username</small>
-          </div>
-          <div class="form-group">
-            <label for="signupInputEmail1">Email address</label>
-            <input type="text" class="form-control" name="email" id="signupInputEmail1" aria-describedby="emailHelp" placeholder="Username / Email">
-            <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
-          </div>
-          <div class="form-group">
-            <label for="signupInputPassword1">Password</label>
-            <input type="password" class="form-control" id="signupInputPassword1" name="passwd" placeholder="Password">
-          </div>
-          <div class="form-group">
-            <label for="signupInputPassword1">Password</label>
-            <input type="password" class="form-control" id="signupInputPassword1" name="passwdtwo" placeholder="Reapeat Password">
-          </div>
-          <div class="modal-footer">
-            <button type="submit" class="btn btn-primary" name="signup">Sign Up</button>
-          </div>
-        </form>
-      </div>
-    </div>
-  </div>
-</div>

@@ -37,7 +37,7 @@
                   <div class="input-group w-100">
                     <input class="form-control border border-white re-radius" type="text" placeholder="Location">
                   <span class="input-group-append " id="basic-addon1">
-                    <button class="btn btn-primary re-radius" type="submit">Search</button>
+                    <button class="btn btn-custom re-radius" type="submit">Search</button>
                   </span>
                   </div>
                   </form>
