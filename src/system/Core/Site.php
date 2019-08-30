@@ -47,7 +47,7 @@ class Site {
     }
 
     // If no errors are called, run signup user query.
-    $db->signupUser($username, $email, $passwd);
+    return $db->signupUser($username, $email, $passwd);
   }
 
   /**
@@ -60,8 +60,8 @@ class Site {
 
     global $db;
 
-    $emailusername = $_POST['emailusername'];
-    $passwd = $_POST['passwd'];
+    $emailusername = $data['emailusername'];
+    $passwd = $data['passwd'];
 
     // Error check
     if (empty($emailusername) || empty($passwd)) {
@@ -69,7 +69,7 @@ class Site {
     }
 
      // If no errors are called, run the login user query
-     $db->loginUser($emailusername, $passwd, FALSE);
+     return $db->loginUser($emailusername, $passwd);
   }
 
   /**

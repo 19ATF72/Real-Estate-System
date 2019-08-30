@@ -1,11 +1,19 @@
 <?php
-
-require_once __DIR__ . '/system/core.php';
-
-/**
-* Create new profile for a user
-*/
+  /**
+   * Real Estate System
+   * @author Andrew De Torres <andrewdetorres999@gmail.com>
+   */
+  require_once __DIR__ . '/system/core.php';
+  $navIsLight = TRUE;
 ?>
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Real Estate System | Andrew De Torres</title>
+    <?php require_once 'templates/header.php'; ?>
+  </head>
+  <body>
 <!DOCTYPE html>
 <html lang="en">
   <head>

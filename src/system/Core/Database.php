@@ -84,14 +84,16 @@ class Database {
 
       if ($result) {
         // TODO: User already in DB
-        echo "User in DB";
+        return [ "status" => 403, "message" => 'Hmm, this doesnt seem to work. Have you tried to log in?' ];
       }
       else {
         $sql = 'INSERT INTO users (username, email, passwd) VALUES (?,?,?)';
         $stmt = $this->get()->prepare($sql);
         $hashedpasswd = password_hash($passwd, PASSWORD_DEFAULT);
         $stmt->execute([$username, $email, $hashedpasswd]);
-        // $result = $stmt->fetch(PDO::FETCH_ASSOC);
+
+        header("location: signup.php?success=true");
+        exit();
       }
     }
   }
@@ -103,7 +105,7 @@ class Database {
    * @param string $passwd
    * @return void
    */
-  public function loginUser($emailusername, $passwd, $hashed = false) {
+  public function loginUser($emailusername, $passwd) {
 
     $sql = "SELECT * FROM users WHERE username=? OR email=?";
     $stmt = $this->get()->prepare($sql);
@@ -112,22 +114,27 @@ class Database {
       $stmt->execute([$emailusername, $emailusername]);
       $result = $stmt->fetch(PDO::FETCH_ASSOC);
 
-      $passCheck = password_verify($passwd, $result['passwd']);
+      if ($result) {
+        $passCheck = password_verify($passwd, $result['passwd']);
 
-      // Error check against password in the database
-      if ($passCheck == false) {
-        return [ "status" => 403, "message" => 'Invalid credentiabels' ];
+        // Error check against password in the database
+        if ($passCheck == false) {
+          return [ "status" => 403, "message" => 'Invalid credentials' ];
+        }
+        else if ($passCheck == true) {
+
+          // Create session
+          $_SESSION['id'] = $result['id'];
+          $_SESSION['username'] = $result['username'];
+          $_SESSION['email'] = $result['email'];
+
+          // Force a refresh on login.
+          header('Location: index.php');
+          exit();
+        }
       }
-      else if ($passCheck == true) {
-
-        // Create session
-        $_SESSION['id'] = $result['id'];
-        $_SESSION['username'] = $result['username'];
-        $_SESSION['email'] = $result['email'];
-
-        // Force a refresh on login.
-        header('Location: index.php');
-        exit();
+      else {
+        return [ "status" => 403, "message" => 'Invalid credentials' ];
       }
     }
   }
