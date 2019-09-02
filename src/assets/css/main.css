@@ -2,9 +2,33 @@ body {
   font-family: 'Montserrat', sans-serif;
 }
 
+a:link, a:visited {
+  text-decoration: none;
+}
+
 .logo-font{
   font-family: 'Righteous', cursive;
   font-size: 35px;
+}
+
+.navbar-dark {
+  position: relative;
+}
+
+.border-custom {
+  border: 1px solid #512558;
+}
+
+.border-left-custom {
+  border-left: 5px solid #512558;
+}
+
+.border-custom:hover {
+  border: 1px solid #9f63a8;
+}
+
+.border-left-custom:hover {
+  border-left: 5px solid #9f63a8;
 }
 
 .masthead {
