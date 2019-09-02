@@ -123,8 +123,10 @@ background-image: url("data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 32 32
   background-color: #3b5998;
 }
 
-
-/* TEST */
+.table-custom {
+  height: 400px;
+  overflow: scroll;
+}
 
 .group {
   position:relative;
