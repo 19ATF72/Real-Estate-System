@@ -11,8 +11,11 @@ a:link, a:visited {
   font-size: 35px;
 }
 
-.navbar-dark {
+.navbar-custom {
   position: relative;
+  background-image: url('../images/header.jpg');
+  /* background-image: linear-gradient(#234E8E, #3962A4);
+  background-color: #285492; */
 }
 
 .border-custom {
@@ -97,10 +100,6 @@ background-image: url("data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 32 32
   }
 }
 
-
-
-/* TEST */
-
 .form-signin {
   width: 100%;
 }
@@ -122,4 +121,66 @@ background-image: url("data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 32 32
 .btn-facebook {
   color: white;
   background-color: #3b5998;
+}
+
+
+/* TEST */
+
+.group {
+  position:relative;
+  margin-bottom:35px;
+}
+input {
+  font-size:18px;
+  padding:10px 10px 10px 5px;
+  display:block;
+  border:none;
+  border-bottom:1px solid #757575;
+}
+input:focus {
+  outline:none;
+}
+
+label {
+  position:absolute;
+  pointer-events:none;
+  left:5px;
+  top:10px;
+  transition:0.2s ease all;
+  -moz-transition:0.2s ease all;
+  -webkit-transition:0.2s ease all;
+}
+
+input:focus ~ label, input:valid ~ label {
+  top:-20px;
+  font-size:14px;
+  color:#512558;
+}
+
+.bar {
+  position:relative;
+  display:block;
+  width:300px;
+}
+
+.bar:before, .bar:after 	{
+  content:'';
+  height:2px;
+  width:0;
+  bottom:1px;
+  position:absolute;
+  background:#512558;
+  transition:0.2s ease all;
+  -moz-transition:0.2s ease all;
+  -webkit-transition:0.2s ease all;
+}
+.bar:before {
+  left:50%;
+}
+.bar:after {
+  right:50%;
+}
+
+input:focus ~ .bar:before, input:focus ~ .bar:after {
+  width:50%;
 }

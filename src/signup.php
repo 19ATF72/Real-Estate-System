@@ -78,34 +78,36 @@
                 <form class="form-signin p-4" action="" method="post">
                   <input type="hidden" name="signup-post" value="1" />
                   <p class="text-danger"><?php echo $message ? $message : ""; ?></p>
-                  <div class="form-group">
-                    <input type="text" class="form-control" name="username" id="signupInputusername1" aria-describedby="usernameHelp" placeholder="Username">
+                  <div class="group">
+                    <input type="text" class="w-100" name="username" required>
+                    <span class="bar w-100"></span>
+                    <label>Username</label>
                   </div>
-                  <div class="form-group">
-                    <input type="text" class="form-control" name="email" id="signupInputEmail1" aria-describedby="emailHelp" placeholder="Email">
+                  <div class="group">
+                    <input type="text" class="w-100" name="email" required>
+                    <span class="bar w-100"></span>
+                    <label>Email</label>
                   </div>
                   <div class="row">
                     <div class="col-lg-6 col-sm-12">
-                      <div class="form-group">
-                        <input type="password" class="form-control" id="signupInputPassword1" name="passwd" placeholder="Password">
+                      <div class="group">
+                        <input type="text" class="w-100" name="passwd" required>
+                        <span class="bar w-100"></span>
+                        <label>Password</label>
                       </div>
                     </div>
                     <div class="col-lg-6 col-sm-12">
-                      <div class="form-group">
-                        <input type="password" class="form-control" id="signupInputPassword1" name="passwdtwo" placeholder="Reapeat Password">
+                      <div class="group">
+                        <input type="text" class="w-100" name="passwdtwo" required>
+                        <span class="bar w-100"></span>
+                        <label>Reapeat Password</label>
                       </div>
                     </div>
                   </div>
                   <button type="submit" class="btn btn-lg btn-custom btn-block text-uppercase" name="signup">Sign Up</button>
                   <hr class="my-4">
-                  <div class="row">
-                    <div class="col-lg-6 col-sm-12 text-center pb-2">
-                      <button class="btn btn-google" type="button"><i class="fab fa-google mr-2"></i>Log in with Google</button>
-                    </div>
-                    <div class="col-lg-6 col-sm-12 text-center">
-                      <button class="btn btn-facebook" type="button"><i class="fab fa-facebook-f mr-2"></i> Log in with Facebook</button>
-                    </div>
-                  </div>
+                  <button class="btn btn-lg btn-google btn-block text-uppercase" type="button"><i class="fab fa-google mr-2"></i> Log in with Google</button>
+                  <button class="btn btn-lg btn-facebook btn-block text-uppercase" type="button"><i class="fab fa-facebook-f mr-2"></i> Log in with Facebook</button>
                 </form>
               </div>
             <?php } ?>
