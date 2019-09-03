@@ -23,44 +23,24 @@
       }
     }
   }
-  ?>
+?>
 
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <title>Real Estate System | Andrew De Torres</title>
-    <?php require_once 'templates/header.php'; ?>
-  </head>
-  <body>
-
-  <?php
-
-      if ($user->isLoggedIn()) {
-        header("location: profile.php");
-        exit();
-      }
-      else {
-        require_once 'templates/navigation.php';
-      }
-      ?>
-
-<!-- <form action="" method="post">
-<input type="hidden" name="login-post" value="1" />
-<div class="form-group">
-  <label for="loginInputEmail1">Email address</label>
-  <input type="text" class="form-control" name="emailusername" id="loginInputEmail1" aria-describedby="emailHelp" placeholder="Username / Email">
-  <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
-</div>
-<div class="form-group">
-  <label for="loginInputPassword1">Password</label>
-  <input type="password" class="form-control" id="loginInputPassword1" name="passwd" placeholder="Password">
-</div>
-<div class="modal-footer">
-  <button type="submit" class="btn btn-custom" name="login">Login</button>
-  <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-</div>
-</form> -->
-
+<head>
+  <title>Real Estate System | Andrew De Torres</title>
+  <?php require_once 'templates/header.php'; ?>
+</head>
+<body>
+<?php
+  if ($user->isLoggedIn()) {
+    header("location: profile.php");
+    exit();
+  }
+  else {
+    require_once 'templates/navigation.php';
+  }
+?>
 <header class="masthead">
   <div class="container h-100">
     <div class="row h-100 align-items-center">
@@ -82,11 +62,15 @@
         <form class="form-signin p-4" action="" method="post">
         <input type="hidden" name="login-post" value="1" />
           <p class="text-danger"><?php echo $message ? $message : ""; ?></p>
-          <div class="form-group">
-            <input type="text" class="form-control" name="emailusername" id="loginInputEmail1" aria-describedby="emailHelp" placeholder="Username / Email">
+          <div class="group">
+            <input type="text" class="w-100" name="emailusername" required>
+            <span class="bar w-100"></span>
+            <label class="h6 text-dark">Username / Email</label>
           </div>
-          <div class="form-group">
-            <input type="password" class="form-control" id="loginInputPassword1" name="passwd" placeholder="Password">
+          <div class="group">
+            <input type="password" class="w-100" name="passwd" required>
+            <span class="bar w-100"></span>
+            <label class="h6 text-dark">Password</label>
           </div>
           <button type="submit" class="btn btn-lg btn-custom btn-block text-uppercase" name="login">Login</button>
           <hr class="my-4">
