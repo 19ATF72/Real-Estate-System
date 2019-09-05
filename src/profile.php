@@ -18,25 +18,36 @@ $navIsLight = false;
   if ($user->isLoggedIn()) {
     require_once 'templates/auth-navigation.php';
     $userProfile = $profile->getUserProfile();
+
+    $date = new DateTime($userProfile['dob']);
+    $userDob = $date->format('F jS, Y');
+
     ?>
-
-    <!-- <a href="index.php"><button name="Home">Home</button></a><br>
-    <a href="update-profile.php"><button name="editProfile">Edit Profile</button></a> -->
-    <!-- <div class="container my-5">
-      <h1><?php //echo $user->getUsername();?>'s profile</h1>
-      <div class="row my-4">
-
-      </div>
-      <div class="row">
-        <div class="card col-12">
-
-      </div>
-    </div> -->
-
-
     <div class="container my-5">
       <div class="row">
-        <div class="col-lg-8 col-sm-12">
+        <div class="col-lg-4 col-sm-12 mb-5">
+          <div class="card rounded">
+            <img class="card-img-top" src="https://mdbootstrap.com/img/Photos/Avatars/img%20(20).jpg" alt="Card image cap">
+            <div class="card-body">
+              <h5 class="card-title"><?php echo $userProfile['firstName'] . ' ' . $userProfile['lastName'];?></h5>
+            </div>
+            <ul class="list-group list-group-flush">
+              <li class="list-group-item"><?php echo $userDob?></li>
+              <li class="list-group-item">
+                <?php echo $userProfile['addressFirst'] .
+                    ', ' . $userProfile['addressSecond'] .
+                    ', ' . $userProfile['city'];?>
+              </li>
+              <li class="list-group-item"><?php echo $userProfile['postcode'];?></li>
+              <li class="list-group-item"><?php echo $userProfile['mobile']?></li>
+              <li class="list-group-item"><?php echo $userProfile['bio']?></li>
+            </ul>
+            <div class="card-body">
+              <a href="update-profile" class="card-link">Update Profile</a>
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-8 col-sm-12 mb-5">
           <div class="row">
             <div class="col-6 mb-4">
               <a href="/my-properties.php" class="text-decoration-none">
@@ -72,91 +83,59 @@ $navIsLight = false;
                 </div>
               </a>
             </div>
-            <div class="table-custom col-12">
-              <table class="table table-striped">
+            <div class="table-custom col-12 table-striped table-responsive">
+              <table class="table">
                 <thead>
                   <tr>
                     <th>#</th>
-                    <th>Name</th>
+                    <th>Property</th>
+                    <th>view</th>
                   </tr>
                 </thead>
                 <tbody>
                   <tr>
-                    <td>6</td><td>Something</td>
+                    <td>1</td>
+                    <td>Test Property Name</td>
+                    <td><button class="btn btn btn-custom" type="submit">View</button></td>
                   </tr>
                   <tr>
-                    <td>6</td><td>Something</td>
+                    <td>2</td>
+                    <td>Test Property Name</td>
+                    <td><button class="btn btn btn-custom" type="submit">View</button></td>
                   </tr>
                   <tr>
-                    <td>6</td><td>Something</td>
+                    <td>3</td>
+                    <td>Test Property Name</td>
+                    <td><button class="btn btn btn-custom" type="submit">View</button></td>
                   </tr>
                   <tr>
-                    <td>6</td><td>Something</td>
+                    <td>4</td>
+                    <td>Test Property Name</td>
+                    <td><button class="btn btn btn-custom" type="submit">View</button></td>
                   </tr>
                   <tr>
-                    <td>6</td><td>Something</td>
+                    <td>4</td>
+                    <td>Test Property Name</td>
+                    <td><button class="btn btn btn-custom" type="submit">View</button></td>
                   </tr>
                   <tr>
-                    <td>6</td><td>Something</td>
+                    <td>4</td>
+                    <td>Test Property Name</td>
+                    <td><button class="btn btn btn-custom" type="submit">View</button></td>
                   </tr>
                   <tr>
-                    <td>6</td><td>Something</td>
-                  </tr>
-                  <tr>
-                    <td>6</td><td>Something</td>
-                  </tr>
-                  <tr>
-                    <td>6</td><td>Something</td>
-                  </tr>
-                  <tr>
-                    <td>6</td><td>Something</td>
-                  </tr>
-                  <tr>
-                    <td>6</td><td>Something</td>
-                  </tr>
-                  <tr>
-                    <td>6</td><td>Something</td>
-                  </tr>
-                  <tr>
-                    <td>6</td><td>Something</td>
-                  </tr>
-                  <tr>
-                    <td>6</td><td>Something</td>
-                  </tr>
-                  <tr>
-                    <td>6</td><td>Something</td>
+                    <td>4</td>
+                    <td>Test Property Name</td>
+                    <td><button class="btn btn btn-custom" type="submit">View</button></td>
                   </tr>
                 </tbody>
               </table>
             </div>
           </div>
         </div>
-        <div class="col-lg-4 col-sm-12">
-          <div class="card border-custom">
-            <img class="card-img-top" src="https://mdbootstrap.com/img/Photos/Avatars/img%20(20).jpg" alt="Card image cap">
-            <div class="card-body">
-              <h5 class="card-title">Card title</h5>
-              <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-            </div>
-            <ul class="list-group list-group-flush">
-              <li class="list-group-item">Cras justo odio</li>
-              <li class="list-group-item">Dapibus ac facilisis in</li>
-              <li class="list-group-item">Vestibulum at eros</li>
-            </ul>
-            <div class="card-body">
-              <a href="#" class="card-link">Card link</a>
-              <a href="#" class="card-link">Another link</a>
-            </div>
-          </div>
-        </div>
       </div>
     </div>
-
-
     <?php
-    foreach ($userProfile as $field => $v) {
-      echo "<p>{$v}</p>";
-    }
   }
   else {
     header("location: index.php");
