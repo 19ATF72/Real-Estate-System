@@ -207,7 +207,7 @@ input:focus ~ .bar:before, input:focus ~ .bar:after {
 .card-pruple {
   background-image: linear-gradient(60deg, #7f368c, #512558);
 }
-.card i {
+.custom-card i {
   color: white;
   font-size: 3.6rem;
   width: 56px;
@@ -218,42 +218,13 @@ input:focus ~ .bar:before, input:focus ~ .bar:after {
   font-size: 1.4rem;
   color: #999;
   top: 10px;
-  width: 96%;
 }
-.card-title {
-  font-size: 1.4rem;
-  font-weight: lighter;
-  text-align: right;
-  width: 96%;
-}
+
 .card__title small {
   font-weight: 600;
 }
-.card__body {
-  margin: 0 auto;
-  padding: 0.5rem 0 1rem 0;
-  width: 90%;
-}
-.card__body p {
-  color: #888888;
-  font-size: 1.4rem;
-}
-.card__footer {
-  display: flex;
-  border-top: 1px solid #eee;
-  font-size: 1.2rem;
-  margin: 0 auto;
-  padding: 1rem 1rem;
-  width: 90%;
-}
-.card__footer i {
+
+.card-footer i, .card-footer a {
   color: #6f6f6f;
-  font-size: 1.4rem;
-}
-.card__footer a {
-  color: #888888;
-  text-decoration: none;
-  align-self: center;
-  margin-left: 0.5rem;
-  font-size: 1.3rem;
+  font-size: 0.8rem;
 }
