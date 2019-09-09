@@ -14,8 +14,6 @@ a:link, a:visited {
 .navbar-custom {
   position: relative;
   background-image: url('../images/header.jpg');
-  /* background-image: linear-gradient(#234E8E, #3962A4);
-  background-color: #285492; */
 }
 
 .border-custom {
@@ -124,8 +122,12 @@ background-image: url("data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 32 32
 }
 
 .table-custom {
-  height: 400px;
+  height: 220px;
   overflow: scroll;
+}
+
+.table-striped tbody tr:nth-of-type(odd) {
+  background-color: rgba(0, 123, 255, 0.05);
 }
 
 .group {
@@ -185,4 +187,44 @@ input:focus ~ label, input:valid ~ label {
 
 input:focus ~ .bar:before, input:focus ~ .bar:after {
   width:50%;
+}
+
+.card-header{
+  background-color: white;
+}
+
+.custom-icon-panel {
+  align-items: center;
+  display: flex;
+  box-shadow: 0 4px 20px 0 rgba(0, 0, 0, 0.14), 0 7px 10px -5px rgba(156, 39, 176, 0.4);
+  text-align: center;
+  border-radius: 3px;
+  margin-top: -4rem;
+  padding: 2rem;
+  float: left;
+  z-index: 1;
+}
+.card-pruple {
+  background-image: linear-gradient(60deg, #7f368c, #512558);
+}
+.custom-card i {
+  color: white;
+  font-size: 3.6rem;
+  width: 56px;
+}
+.card__category {
+  display: block;
+  text-align: right;
+  font-size: 1.4rem;
+  color: #999;
+  top: 10px;
+}
+
+.card__title small {
+  font-weight: 600;
+}
+
+.card-footer i, .card-footer a {
+  color: #6f6f6f;
+  font-size: 0.8rem;
 }
