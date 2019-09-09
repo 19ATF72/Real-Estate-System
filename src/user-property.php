@@ -26,7 +26,7 @@
           // Get a property based on the property ID in the URL
           $singleProperty = $property->getSingleProperty($_GET['prop']);
           ?>
-          <a href="my-properties.php"><button name="myprops">My Properties</button></a>
+          <a href="profile.php"><button name="myprops">Profile</button></a>
           <br>
 
           <p>Space: <?php echo $singleProperty['floorSpace']; ?></p>

@@ -48,9 +48,10 @@ class Property {
   * @return void
   */
   public function getAllUsersProperty() {
-    global $db;
+    
+    global $user, $db;
+    $userID = $user->getId();
 
-    $userID = 1; //TODO
     $sql = 'SELECT * FROM properties WHERE userId = ?';
 
     $stmt = $db->get()->prepare($sql);
@@ -117,6 +118,50 @@ class Property {
     if ($stmt) {
       $stmt->execute([$propertyId]);
       return $stmt->fetch(PDO::FETCH_ASSOC);
+    }
+    else {
+      return NULL;
+    }
+  }
+
+  /**
+   * Return the total number of active properties
+   *
+   * @return void
+   */
+  public function getUserPropertyCount() {
+    global $user, $db;
+    $userID = $user->getId();
+
+    $sql = 'SELECT COUNT(*) FROM `properties` WHERE userId = ? AND status = 1';
+
+    $stmt = $db->get()->prepare($sql);
+
+    if ($stmt) {
+      $stmt->execute([$userID]);
+      return $stmt->fetch(PDO::FETCH_COLUMN);
+    }
+    else {
+      return NULL;
+    }
+  }
+
+  /**
+   * Return the total number of sold properties
+   *
+   * @return void
+   */
+  public function getUserSoldCount() {
+    global $user, $db;
+    $userID = $user->getId();
+
+    $sql = 'SELECT COUNT(*) FROM `properties` WHERE userId = ? AND status != 1';
+
+    $stmt = $db->get()->prepare($sql);
+
+    if ($stmt) {
+      $stmt->execute([$userID]);
+      return $stmt->fetch(PDO::FETCH_COLUMN);
     }
     else {
       return NULL;
